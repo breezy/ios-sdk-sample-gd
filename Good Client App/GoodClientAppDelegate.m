@@ -12,8 +12,8 @@
 @synthesize window = _window;
 @synthesize gdLibrary = _gdLibrary;
 
-NSString* kappId = @"com.good.gd.client.app";
-NSString* kappVersion = @"1.0.0.0";
+NSString* kappId = @"com.breezy.good.test";
+NSString* kappVersion = @"1.0";
 
 #pragma mark -
 #pragma mark Application lifecycle

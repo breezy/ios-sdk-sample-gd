@@ -12,11 +12,12 @@
 #import <GD/GDFileSystem.h>
 #import <GD/GDSecureDocs.h>
 
-@interface GoodClientViewController : UIViewController
+@interface GoodClientViewController : UIViewController <GDServiceClientDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (nonatomic, assign) GDServiceClient *gdsc;
 @property (nonatomic, assign) GDiOS *gdLibrary;
+@property (nonatomic, assign) id <GDServiceClientDelegate> delegate;
 
 - (IBAction)sendPressed:(UIButton *)sender;
 

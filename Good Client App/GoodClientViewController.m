@@ -16,17 +16,28 @@
 @synthesize gdsc = _gdsc;
 @synthesize textField = _textField;
 @synthesize gdLibrary = _gdLibrary;
+@synthesize delegate = _delegate;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
 
+- (void)GDServiceClientDidFinishSendingTo:(NSString *)application withAttachments:(NSArray *)attachments withParams:(id)params correspondingToRequestID:(NSString *)requestID
+{
+    
+}
+
+- (void)GDServiceClientDidReceiveFrom:(NSString *)application withParams:(id)params withAttachments:(NSArray *)attachments correspondingToRequestID:(NSString *)requestID
+{
+    
+}
+
 - (IBAction)sendPressed:(UIButton *)sender
 {
     NSError *err = nil;
     
-    _gdsc = [GDServiceClient new];
+    _gdsc = [[GDServiceClient alloc] init];
     _gdsc.delegate = self;
 	// Do any additional setup after loading the view, typically from a nib.
     
