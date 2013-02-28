@@ -6,21 +6,40 @@
 //  Copyright (c) 2013 team breezy. All rights reserved.
 //
 
+#import <GD/GDiOS.h>
+#import <GD/GDAppDetail.h>
+
+#import "ServiceController.h"
 #import "GoodClientViewController.h"
+#import "GoodClientAppDelegate.h"
+
+#define kPrintServerAppId @"com.breezy.good.test.server" 
+#define kPrintServiceId @"com.breezy.good.services.server"
 
 @interface GoodClientViewController ()
 
 @end
 
 @implementation GoodClientViewController
+{
+    ServiceController *_serviceController;
+}
 @synthesize gdsc = _gdsc;
 @synthesize textField = _textField;
 @synthesize gdLibrary = _gdLibrary;
 @synthesize delegate = _delegate;
 
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // set up a ServiceController
+    _serviceController = [[ServiceController alloc] init];
+    // Set service controller delegate
+    [_serviceController setDelegate:self];
 }
 
 - (void)GDServiceClientDidFinishSendingTo:(NSString *)application withAttachments:(NSArray *)attachments withParams:(id)params correspondingToRequestID:(NSString *)requestID
@@ -33,60 +52,70 @@
     
 }
 
-- (IBAction)sendPressed:(UIButton *)sender
+#pragma mark - ServiceControllerDelegate Methods
+- (void) showAlert:(id)serviceReply
 {
-    NSError *err = nil;
-    
-    _gdsc = [[GDServiceClient alloc] init];
-    _gdsc.delegate = self;
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    BOOL OKsofar = [GDFileSystem createDirectoryAtPath:@"/Hello/my"
-                           withIntermediateDirectories:YES
-                                            attributes:nil
-                                                 error:&err];
-    if (OKsofar) {
-        NSLog( @"Directory created OK\n" );
+    if ([serviceReply isKindOfClass:[NSString class]])
+    {
+        // The Print Service returned a defined success response...
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Success"
+                                                        message:serviceReply
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
-    else {
-        NSLog( @"Directory not created \"%@\"\n", [err localizedDescription] );
+    else if ([serviceReply isKindOfClass:[NSError class]])
+    {
+        NSError* error = (NSError*)serviceReply;
+        // The Greeting Service returned a defined error response...
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:[error domain]
+                                                        message:[error localizedDescription]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
-    
-    NSString *helloStr = self.textField.text;
-    
-    NSData *textFieldStrAsData =
-    [helloStr dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    OKsofar = [GDFileSystem writeToFile:textFieldStrAsData
-                                   name:@"/Hello/my/world.txt"
-                                  error:&err];
-    
-    if (OKsofar) {
-        NSLog( @"Wrote OK\n" );
+    else
+    {
+        // The Print Service returned an unexpected response...
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"Not implemented."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
-    else {
-        NSLog( @"Not written \"%@\"\n", [err localizedDescription] );
-    }
-    
-    [GDFileSystem writeToFile:textFieldStrAsData name:@"/Hello/my/world.txt" error:&err];
-    
-    NSString *textFile = @"/Hello/my/world.txt";
-    
-    self.gdLibrary = [GDiOS sharedInstance];
-    
-//    NSArray *clientSVC = [self.gdLibrary getApplicationDetailsForService:<#(NSString *)#> andVersion:@"1.0.0.0"]
-//
-//    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"TEXT", 1, nil];
-//    
-//    NSArray *attachments = [NSArray arrayWithObjects:textFieldStrAsData, nil];
-//    
-//    [GDServiceClient sendTo:<#(NSString *)#> withService:<#(NSString *)#> withVersion:<#(NSString *)#> withMethod:<#(NSString *)#> withParams:params withAttachments:attachments bringServiceToFront:GDEPreferPeerInForeground requestID:requestId error:nil];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Buttons Actions
+- (IBAction)sendPressed:(UIButton *)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    NSError *err = nil;
+    
+    // GD service framework API
+    NSArray* printSvc = [self.gdLibrary getApplicationDetailsForService:kPrintServiceId andVersion:@"1.0.0.0"];
+    
+    // send a 'print' request to the Print Service...
+    BOOL didSendRequest = [_serviceController sendRequest:&err requestType:PrintFile sendTo:printSvc[0]];
+    
+    if (NO == didSendRequest)
+    {
+        // The request could not be sent...
+        [self showErrorAlert:err];
+    }
+}
+
+#pragma mark - helpers
+-(void) showErrorAlert:(NSError*)goodError
+{
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"An error occurred."
+                                                    message:[goodError localizedDescription]
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

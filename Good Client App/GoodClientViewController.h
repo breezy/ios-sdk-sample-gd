@@ -10,9 +10,9 @@
 #import <GD/GDiOS.h>
 #import <GD/GDServices.h>
 #import <GD/GDFileSystem.h>
-#import <GD/GDSecureDocs.h>
+#import "ServiceController.h"
 
-@interface GoodClientViewController : UIViewController <GDServiceClientDelegate>
+@interface GoodClientViewController : UIViewController <GDServiceClientDelegate, ServiceControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (nonatomic, assign) GDServiceClient *gdsc;

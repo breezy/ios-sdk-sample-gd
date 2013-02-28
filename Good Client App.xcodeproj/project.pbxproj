@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C16F56E16D6FA170093238B /* doc.doc in Resources */ = {isa = PBXBuildFile; fileRef = 9C16F56D16D6FA170093238B /* doc.doc */; };
+		9C16F57216D7F2A40093238B /* png.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C16F57116D7F2A40093238B /* png.png */; };
+		9C16F57416D7F2AD0093238B /* jpg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C16F57316D7F2AD0093238B /* jpg.jpg */; };
 		9C59952C16C2D8A600701ECF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59952B16C2D8A600701ECF /* UIKit.framework */; };
 		9C59952E16C2D8A600701ECF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59952D16C2D8A600701ECF /* Foundation.framework */; };
 		9C59953016C2D8A600701ECF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59952F16C2D8A600701ECF /* CoreGraphics.framework */; };
@@ -34,6 +37,9 @@
 		9C59957A16C2DA8700701ECF /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59957916C2DA8700701ECF /* libstdc++.dylib */; };
 		9C59957B16C2DA9000701ECF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59956916C2DA3300701ECF /* libz.dylib */; };
 		9C59957D16C2DACB00701ECF /* GDAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C59957C16C2DACB00701ECF /* GDAssets.bundle */; };
+		9C5FDF8E16D45F7100CBEFCE /* pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9C5FDF8D16D45F7100CBEFCE /* pdf.pdf */; };
+		9C5FDF9116D46E0900CBEFCE /* txt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9C5FDF9016D46E0900CBEFCE /* txt.txt */; };
+		9C86E6B416D2C7CD001652AC /* ServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C86E6B316D2C7CD001652AC /* ServiceController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C16F56D16D6FA170093238B /* doc.doc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = doc.doc; sourceTree = "<group>"; };
+		9C16F57116D7F2A40093238B /* png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = png.png; sourceTree = "<group>"; };
+		9C16F57316D7F2AD0093238B /* jpg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jpg.jpg; sourceTree = "<group>"; };
 		9C59952716C2D8A600701ECF /* Good Client App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Client App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C59952B16C2D8A600701ECF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C59952D16C2D8A600701ECF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -80,6 +89,10 @@
 		9C59957716C2DA8100701ECF /* GD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GD.framework; path = System/Library/Frameworks/GD.framework; sourceTree = SDKROOT; };
 		9C59957916C2DA8700701ECF /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		9C59957C16C2DACB00701ECF /* GDAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GDAssets.bundle; path = System/Library/Frameworks/GD.framework/Resources/GDAssets.bundle; sourceTree = SDKROOT; };
+		9C5FDF8D16D45F7100CBEFCE /* pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pdf.pdf; sourceTree = "<group>"; };
+		9C5FDF9016D46E0900CBEFCE /* txt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = txt.txt; sourceTree = "<group>"; };
+		9C86E6B216D2C7CD001652AC /* ServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceController.h; sourceTree = "<group>"; };
+		9C86E6B316D2C7CD001652AC /* ServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +171,8 @@
 		9C59953116C2D8A600701ECF /* Good Client App */ = {
 			isa = PBXGroup;
 			children = (
+				9C86E6B216D2C7CD001652AC /* ServiceController.h */,
+				9C86E6B316D2C7CD001652AC /* ServiceController.m */,
 				9C59953A16C2D8A600701ECF /* GoodClientAppDelegate.h */,
 				9C59953B16C2D8A600701ECF /* GoodClientAppDelegate.m */,
 				9C59954316C2D8A600701ECF /* MainStoryboard_iPhone.storyboard */,
@@ -173,6 +188,11 @@
 			isa = PBXGroup;
 			children = (
 				9C59953316C2D8A600701ECF /* Good Client App-Info.plist */,
+				9C5FDF8D16D45F7100CBEFCE /* pdf.pdf */,
+				9C16F57116D7F2A40093238B /* png.png */,
+				9C16F57316D7F2AD0093238B /* jpg.jpg */,
+				9C5FDF9016D46E0900CBEFCE /* txt.txt */,
+				9C16F56D16D6FA170093238B /* doc.doc */,
 				9C59953416C2D8A600701ECF /* InfoPlist.strings */,
 				9C59953716C2D8A600701ECF /* main.m */,
 				9C59953916C2D8A600701ECF /* Good Client App-Prefix.pch */,
@@ -281,6 +301,11 @@
 				9C59954216C2D8A600701ECF /* Default-568h@2x.png in Resources */,
 				9C59954516C2D8A600701ECF /* MainStoryboard_iPhone.storyboard in Resources */,
 				9C59954816C2D8A600701ECF /* MainStoryboard_iPad.storyboard in Resources */,
+				9C5FDF8E16D45F7100CBEFCE /* pdf.pdf in Resources */,
+				9C5FDF9116D46E0900CBEFCE /* txt.txt in Resources */,
+				9C16F56E16D6FA170093238B /* doc.doc in Resources */,
+				9C16F57216D7F2A40093238B /* png.png in Resources */,
+				9C16F57416D7F2AD0093238B /* jpg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +343,7 @@
 				9C59953816C2D8A600701ECF /* main.m in Sources */,
 				9C59953C16C2D8A600701ECF /* GoodClientAppDelegate.m in Sources */,
 				9C59954B16C2D8A600701ECF /* GoodClientViewController.m in Sources */,
+				9C86E6B416D2C7CD001652AC /* ServiceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +459,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Good Client App/Good Client App-Prefix.pch";
 				INFOPLIST_FILE = "Good Client App/Good Client App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -445,6 +472,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Good Client App/Good Client App-Prefix.pch";
 				INFOPLIST_FILE = "Good Client App/Good Client App-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

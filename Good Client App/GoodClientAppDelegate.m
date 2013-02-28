@@ -7,6 +7,7 @@
 //
 
 #import "GoodClientAppDelegate.h"
+#import "ServiceController.h"
 
 @implementation GoodClientAppDelegate
 @synthesize window = _window;
@@ -24,6 +25,7 @@ NSString* kappVersion = @"1.0";
     self.gdLibrary = [GDiOS sharedInstance];
     _gdLibrary.delegate = self;
     [_gdLibrary authorise:kappId andVersion:kappVersion];
+    
     
     return YES;
 }
@@ -100,6 +102,7 @@ NSString* kappVersion = @"1.0";
         case GDErrorNone: {
             if (!started) {
                 // launch application UI here
+                
                 started = YES;
             }
             break;

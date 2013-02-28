@@ -9,11 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <GD/GDiOS.h>
 
+@class ServiceController;
+
 @interface GoodClientAppDelegate : UIResponder <UIApplicationDelegate, GDiOSDelegate>
 {
     BOOL started;
+    ServiceController *serviceController;
 }
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, assign) GDiOS *gdLibrary;
+
+-(NSArray*) getProvidersForService:(NSString*)serviceId;
 
 @end
