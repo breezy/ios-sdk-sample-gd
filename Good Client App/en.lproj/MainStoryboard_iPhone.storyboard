@@ -25,23 +25,28 @@
                                     <action selector="sendPressed:" destination="2" eventType="touchUpInside" id="krq-EL-6P1"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Type Here" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWg-0P-mfu">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LMx-Oa-KA6">
+                                <segments>
+                                    <segment title="doc"/>
+                                    <segment title="png"/>
+                                    <segment title="txt"/>
+                                    <segment title="pdf"/>
+                                    <segment title="jpg"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="s8f-c9-MKd" firstAttribute="top" secondItem="3" secondAttribute="top" constant="224" id="Qgk-Zh-uJZ"/>
-                            <constraint firstItem="s8f-c9-MKd" firstAttribute="centerX" secondItem="aWg-0P-mfu" secondAttribute="centerX" type="default" id="eCY-GE-fra"/>
-                            <constraint firstItem="aWg-0P-mfu" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pxU-Dg-Gtm"/>
-                            <constraint firstAttribute="trailing" secondItem="aWg-0P-mfu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tyS-wj-BHU"/>
-                            <constraint firstItem="aWg-0P-mfu" firstAttribute="top" secondItem="3" secondAttribute="top" constant="156" id="zvC-8T-7qq"/>
+                            <constraint firstAttribute="trailing" secondItem="LMx-Oa-KA6" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Dzn-xX-fnS"/>
+                            <constraint firstItem="s8f-c9-MKd" firstAttribute="top" secondItem="3" secondAttribute="top" constant="230" id="Jxg-1O-o0e"/>
+                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="top" secondItem="3" secondAttribute="top" constant="171" id="ozc-sw-iqo"/>
+                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="centerX" secondItem="s8f-c9-MKd" secondAttribute="centerX" type="default" id="s9s-PW-FnD"/>
+                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yGV-rX-Px4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8sw-Jy-B7F"/>
                     <connections>
-                        <outlet property="TextField" destination="aWg-0P-mfu" id="B89-dT-blj"/>
+                        <outlet property="fileTypeSegmentedControl" destination="LMx-Oa-KA6" id="ruC-ug-Ogg"/>
                         <outlet property="sendButton" destination="s8f-c9-MKd" id="hqt-Br-lpL"/>
                     </connections>
                 </viewController>

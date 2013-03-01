@@ -53,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C0B186D16E03A48008D4112 /* Protocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Protocols.h; sourceTree = "<group>"; };
 		9C16F56D16D6FA170093238B /* doc.doc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = doc.doc; sourceTree = "<group>"; };
 		9C16F57116D7F2A40093238B /* png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = png.png; sourceTree = "<group>"; };
 		9C16F57316D7F2AD0093238B /* jpg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jpg.jpg; sourceTree = "<group>"; };
@@ -171,14 +172,15 @@
 		9C59953116C2D8A600701ECF /* Good Client App */ = {
 			isa = PBXGroup;
 			children = (
+				9C0B186D16E03A48008D4112 /* Protocols.h */,
 				9C86E6B216D2C7CD001652AC /* ServiceController.h */,
 				9C86E6B316D2C7CD001652AC /* ServiceController.m */,
+				9C59954916C2D8A600701ECF /* GoodClientViewController.h */,
+				9C59954A16C2D8A600701ECF /* GoodClientViewController.m */,
 				9C59953A16C2D8A600701ECF /* GoodClientAppDelegate.h */,
 				9C59953B16C2D8A600701ECF /* GoodClientAppDelegate.m */,
 				9C59954316C2D8A600701ECF /* MainStoryboard_iPhone.storyboard */,
 				9C59954616C2D8A600701ECF /* MainStoryboard_iPad.storyboard */,
-				9C59954916C2D8A600701ECF /* GoodClientViewController.h */,
-				9C59954A16C2D8A600701ECF /* GoodClientViewController.m */,
 				9C59953216C2D8A600701ECF /* Supporting Files */,
 			);
 			path = "Good Client App";

@@ -16,21 +16,14 @@
 #define kPrintServerAppId @"com.breezy.good.test.server" 
 #define kPrintServiceId @"com.breezy.good.services.server"
 
-@interface GoodClientViewController ()
-
-@end
-
 @implementation GoodClientViewController
 {
     ServiceController *_serviceController;
 }
 @synthesize gdsc = _gdsc;
-@synthesize textField = _textField;
 @synthesize gdLibrary = _gdLibrary;
 @synthesize delegate = _delegate;
-
-
-
+@synthesize fileTypeSegmentedControl = _fileTypeSegmentedControl;
 
 - (void)viewDidLoad
 {
@@ -40,6 +33,8 @@
     _serviceController = [[ServiceController alloc] init];
     // Set service controller delegate
     [_serviceController setDelegate:self];
+    
+    self.gcvcDelegate = _serviceController;
 }
 
 - (void)GDServiceClientDidFinishSendingTo:(NSString *)application withAttachments:(NSArray *)attachments withParams:(id)params correspondingToRequestID:(NSString *)requestID
@@ -91,14 +86,15 @@
 #pragma mark - Buttons Actions
 - (IBAction)sendPressed:(UIButton *)sender
 {
+    [self.gcvcDelegate fileTypeSelected:[self.fileTypeSegmentedControl titleForSegmentAtIndex:self.fileTypeSegmentedControl.selectedSegmentIndex]];
     
     NSError *err = nil;
     
     // GD service framework API
-    NSArray* printSvc = [self.gdLibrary getApplicationDetailsForService:kPrintServiceId andVersion:@"1.0.0.0"];
+//    NSArray* printSvc = [self.gdLibrary getApplicationDetailsForService:kPrintServiceId andVersion:@"1.0.0.0"];
     
     // send a 'print' request to the Print Service...
-    BOOL didSendRequest = [_serviceController sendRequest:&err requestType:PrintFile sendTo:printSvc[0]];
+    BOOL didSendRequest = [_serviceController sendRequest:&err requestType:PrintFile sendTo:kPrintServerAppId];
     
     if (NO == didSendRequest)
     {
@@ -118,4 +114,7 @@
     [alert show];
 }
 
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
 @end

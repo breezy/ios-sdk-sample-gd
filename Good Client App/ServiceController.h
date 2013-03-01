@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <GD/GDServices.h>
+#import "Protocols.h"
 
 @class ViewController;
 @class RootViewController;
@@ -17,17 +18,12 @@ typedef enum {
     BringServiceAppToFront,
 } ClientRequestType;
 
-@protocol ServiceControllerDelegate <NSObject>
-
--(void)showAlert:(id)serviceReply;
-
-@end
-
-@interface ServiceController : NSObject <GDServiceClientDelegate, GDServiceDelegate>
+@interface ServiceController : NSObject <GDServiceClientDelegate, GDServiceDelegate, GoodClientViewControllerDelegate>
 
 @property (nonatomic) id <ServiceControllerDelegate> delegate;
 @property (strong, nonatomic) GDServiceClient *goodServiceClient;
 @property (strong, nonatomic) GDService *goodServiceServer;
+@property (strong, nonatomic) NSString *fileType;
 
 - (BOOL) sendRequest:(NSError**)error requestType:(ClientRequestType)type sendTo:(NSString*)appId;
 

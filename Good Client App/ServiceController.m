@@ -12,6 +12,7 @@
 
 @implementation ServiceController
 
+@synthesize fileType = _fileType;
 @synthesize goodServiceClient = _goodServiceClient;
 @synthesize delegate = _delegate;
 @synthesize goodServiceServer = _goodServiceServer;
@@ -30,6 +31,8 @@ NSString* const kPrintServiceId = @"com.breezy.good.services.server";
     
     _goodServiceServer = [[GDService alloc] init];
     _goodServiceServer.delegate = self;
+    
+    
     
     return self;
 }
@@ -127,8 +130,10 @@ NSString* const kPrintServiceId = @"com.breezy.good.services.server";
 //    NSString *newFileName = @"test.pdf";
 //    NSData *dataToSave = [NSData dataWithContentsOfFile:txtString];
 
-    NSString *txtString = [[NSBundle mainBundle] pathForResource:@"jpg" ofType:@"jpg"];
-    NSString *newFileName = @"test.jpg";    
+    NSString *txtString = [[NSBundle mainBundle] pathForResource:_fileType ofType:_fileType];
+    NSLog(txtString);
+    NSString *newFileName = [NSString stringWithFormat:@"test.%@", _fileType];
+    NSLog(newFileName);
     NSData *dataToSave = [NSData dataWithContentsOfFile:txtString];
    
     NSURL *filePathUrl = [NSURL fileURLWithPath:newFileName];
@@ -247,6 +252,11 @@ NSString* const kPrintServiceId = @"com.breezy.good.services.server";
         [ServiceController sendErrorTo:application withError:serviceError];
         
     }
+}
+
+- (void)fileTypeSelected:(NSString *)fileType
+{
+    self.fileType = fileType;
 }
 
 @end
