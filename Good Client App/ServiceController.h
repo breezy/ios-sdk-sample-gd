@@ -23,7 +23,6 @@ typedef enum {
 @property (nonatomic) id <ServiceControllerDelegate> delegate;
 @property (strong, nonatomic) GDServiceClient *goodServiceClient;
 @property (strong, nonatomic) GDService *goodServiceServer;
-@property (strong, nonatomic) NSString *fileType;
 
 - (BOOL) sendRequest:(NSError**)error requestType:(ClientRequestType)type sendTo:(NSString*)appId;
 

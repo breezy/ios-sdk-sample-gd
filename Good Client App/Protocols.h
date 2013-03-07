@@ -1,3 +1,11 @@
+//
+//  ServiceController.m
+//  Good Client App
+//
+//  Created by team breezy on 2/18/13.
+//  Copyright (c) 2013 team breezy. All rights reserved.
+//
+
 @class ServiceController;
 @class GoodClientViewController;
 
@@ -6,5 +14,5 @@
 @end
 
 @protocol GoodClientViewControllerDelegate <NSObject>
--(void)fileTypeSelected:(NSString *)fileType;
+-(void)fileTypeSelected:(NSString *)type;
 @end

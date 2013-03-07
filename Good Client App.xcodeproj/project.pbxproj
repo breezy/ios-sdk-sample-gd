@@ -458,11 +458,13 @@
 		9C59956416C2D8A600701ECF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jared Hansen (W2VYKZJ3D8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Good Client App/Good Client App-Prefix.pch";
 				INFOPLIST_FILE = "Good Client App/Good Client App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6E69F461-5BE1-4E1D-BD70-CF12F8AB5D3C";
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -471,11 +473,13 @@
 		9C59956516C2D8A600701ECF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jared Hansen (W2VYKZJ3D8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Good Client App/Good Client App-Prefix.pch";
 				INFOPLIST_FILE = "Good Client App/Good Client App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6E69F461-5BE1-4E1D-BD70-CF12F8AB5D3C";
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

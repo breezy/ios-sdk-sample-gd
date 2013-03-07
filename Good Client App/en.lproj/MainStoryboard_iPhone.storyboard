@@ -14,7 +14,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8f-c9-MKd">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="SEND">
+                                <state key="normal" title="Print">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,23 +25,29 @@
                                     <action selector="sendPressed:" destination="2" eventType="touchUpInside" id="krq-EL-6P1"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LMx-Oa-KA6">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LMx-Oa-KA6">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="302" id="MF2-bv-uc6"/>
+                                </constraints>
                                 <segments>
                                     <segment title="doc"/>
-                                    <segment title="png"/>
+                                    <segment title="docx"/>
                                     <segment title="txt"/>
+                                    <segment title="ppt"/>
                                     <segment title="pdf"/>
+                                    <segment title="bmp"/>
+                                    <segment title="gif"/>
+                                    <segment title="png"/>
                                     <segment title="jpg"/>
                                 </segments>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="LMx-Oa-KA6" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Dzn-xX-fnS"/>
-                            <constraint firstItem="s8f-c9-MKd" firstAttribute="top" secondItem="3" secondAttribute="top" constant="230" id="Jxg-1O-o0e"/>
-                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="top" secondItem="3" secondAttribute="top" constant="171" id="ozc-sw-iqo"/>
-                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="centerX" secondItem="s8f-c9-MKd" secondAttribute="centerX" type="default" id="s9s-PW-FnD"/>
-                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yGV-rX-Px4"/>
+                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="centerX" secondItem="s8f-c9-MKd" secondAttribute="centerX" type="default" id="8V6-dJ-LZL"/>
+                            <constraint firstItem="s8f-c9-MKd" firstAttribute="top" secondItem="3" secondAttribute="top" constant="237" id="VYj-6H-m0L"/>
+                            <constraint firstItem="s8f-c9-MKd" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="b5Y-9O-WGj"/>
+                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="top" secondItem="3" secondAttribute="top" constant="191" id="wDR-1N-hDV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8sw-Jy-B7F"/>
