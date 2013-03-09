@@ -18,12 +18,12 @@ typedef enum {
     BringServiceAppToFront,
 } ClientRequestType;
 
-@interface ServiceController : NSObject <GDServiceClientDelegate, GDServiceDelegate, GoodClientViewControllerDelegate>
+@interface ServiceController : NSObject <GDServiceClientDelegate, GDServiceDelegate>
 
 @property (nonatomic) id <ServiceControllerDelegate> delegate;
 @property (strong, nonatomic) GDServiceClient *goodServiceClient;
 @property (strong, nonatomic) GDService *goodServiceServer;
 
 - (BOOL) sendRequest:(NSError**)error requestType:(ClientRequestType)type sendTo:(NSString*)appId;
-
+- (BOOL) printFile:(NSString *)file withError:(NSError**)error;
 @end

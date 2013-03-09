@@ -13,8 +13,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8f-c9-MKd">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Print">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="03K-uf-sw1"/>
+                                    <constraint firstAttribute="width" constant="175" id="Sgv-Qc-zG7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Print with Breezy">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,32 +29,61 @@
                                     <action selector="sendPressed:" destination="2" eventType="touchUpInside" id="krq-EL-6P1"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LMx-Oa-KA6">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LMx-Oa-KA6">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="302" id="MF2-bv-uc6"/>
+                                    <constraint firstAttribute="height" constant="44" id="QQ1-x3-j8m"/>
+                                    <constraint firstAttribute="width" constant="296" id="t8m-E7-yKN"/>
                                 </constraints>
                                 <segments>
                                     <segment title="doc"/>
-                                    <segment title="docx"/>
                                     <segment title="txt"/>
                                     <segment title="ppt"/>
                                     <segment title="pdf"/>
-                                    <segment title="bmp"/>
-                                    <segment title="gif"/>
                                     <segment title="png"/>
                                     <segment title="jpg"/>
                                 </segments>
                             </segmentedControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select a file type and" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAb-VG-qAD">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="bW3-es-6iE"/>
+                                    <constraint firstAttribute="width" constant="205" id="hyf-Ay-Kz9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.36470588240000001" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="press &quot;Print with Breezy&quot;!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCB-B0-0fo">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="3kK-hs-n7J"/>
+                                    <constraint firstAttribute="width" constant="250" id="slA-qE-0bl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.36470588240000001" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Icon@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="r3V-9Z-ihB">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="7QE-FQ-KSV"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87843137250000003" green="0.94901960780000005" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="centerX" secondItem="s8f-c9-MKd" secondAttribute="centerX" type="default" id="8V6-dJ-LZL"/>
-                            <constraint firstItem="s8f-c9-MKd" firstAttribute="top" secondItem="3" secondAttribute="top" constant="237" id="VYj-6H-m0L"/>
-                            <constraint firstItem="s8f-c9-MKd" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="b5Y-9O-WGj"/>
-                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="top" secondItem="3" secondAttribute="top" constant="191" id="wDR-1N-hDV"/>
+                            <constraint firstItem="fAb-VG-qAD" firstAttribute="centerX" secondItem="DCB-B0-0fo" secondAttribute="centerX" type="default" id="6s6-cp-zb8"/>
+                            <constraint firstItem="fAb-VG-qAD" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="BQJ-Gt-ZrC"/>
+                            <constraint firstItem="r3V-9Z-ihB" firstAttribute="centerX" secondItem="fAb-VG-qAD" secondAttribute="centerX" type="default" id="NFu-J4-ebZ"/>
+                            <constraint firstItem="r3V-9Z-ihB" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Nnq-O1-jBw"/>
+                            <constraint firstItem="s8f-c9-MKd" firstAttribute="centerX" secondItem="LMx-Oa-KA6" secondAttribute="centerX" type="default" id="QJR-a8-fBJ"/>
+                            <constraint firstItem="DCB-B0-0fo" firstAttribute="top" secondItem="fAb-VG-qAD" secondAttribute="bottom" constant="-22" type="user" id="WnE-eb-Jda"/>
+                            <constraint firstItem="r3V-9Z-ihB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3" secondAttribute="top" priority="716" constant="31" type="user" id="dc5-hV-BQS"/>
+                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="top" secondItem="DCB-B0-0fo" secondAttribute="bottom" constant="6" type="user" id="kmT-Os-IIm"/>
+                            <constraint firstItem="fAb-VG-qAD" firstAttribute="top" secondItem="r3V-9Z-ihB" secondAttribute="bottom" constant="2" type="user" id="nmY-j2-xWl"/>
+                            <constraint firstItem="DCB-B0-0fo" firstAttribute="centerX" secondItem="LMx-Oa-KA6" secondAttribute="centerX" type="default" id="ood-Ua-7oP"/>
+                            <constraint firstItem="s8f-c9-MKd" firstAttribute="top" secondItem="LMx-Oa-KA6" secondAttribute="bottom" constant="28" type="user" id="tlz-6v-GYt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8sw-Jy-B7F"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="fileTypeSegmentedControl" destination="LMx-Oa-KA6" id="ruC-ug-Ogg"/>
                         <outlet property="sendButton" destination="s8f-c9-MKd" id="hqt-Br-lpL"/>
@@ -79,6 +112,9 @@
             <point key="canvasLocation" x="221" y="112"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon@2x.png" width="114" height="114"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

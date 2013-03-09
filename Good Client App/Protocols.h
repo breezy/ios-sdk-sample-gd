@@ -12,7 +12,3 @@
 @protocol ServiceControllerDelegate <NSObject>
 -(void)showAlert:(id)serviceReply;
 @end
-
-@protocol GoodClientViewControllerDelegate <NSObject>
--(void)fileTypeSelected:(NSString *)type;
-@end

@@ -40,6 +40,9 @@
 		9C5FDF8E16D45F7100CBEFCE /* pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9C5FDF8D16D45F7100CBEFCE /* pdf.pdf */; };
 		9C5FDF9116D46E0900CBEFCE /* txt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9C5FDF9016D46E0900CBEFCE /* txt.txt */; };
 		9C86E6B416D2C7CD001652AC /* ServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C86E6B316D2C7CD001652AC /* ServiceController.m */; };
+		9C883B1816EAC3AF00E31372 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C883B1716EAC3AF00E31372 /* clouds.png */; };
+		9C883B1A16EAC94800E31372 /* ppt.ppt in Resources */ = {isa = PBXBuildFile; fileRef = 9C883B1916EAC94700E31372 /* ppt.ppt */; };
+		9C883B1C16EAD4CD00E31372 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C883B1B16EAD4CC00E31372 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,9 @@
 		9C5FDF9016D46E0900CBEFCE /* txt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = txt.txt; sourceTree = "<group>"; };
 		9C86E6B216D2C7CD001652AC /* ServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceController.h; sourceTree = "<group>"; };
 		9C86E6B316D2C7CD001652AC /* ServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceController.m; sourceTree = "<group>"; };
+		9C883B1716EAC3AF00E31372 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
+		9C883B1916EAC94700E31372 /* ppt.ppt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ppt.ppt; sourceTree = "<group>"; };
+		9C883B1B16EAD4CC00E31372 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,13 +200,16 @@
 				9C16F57116D7F2A40093238B /* png.png */,
 				9C16F57316D7F2AD0093238B /* jpg.jpg */,
 				9C5FDF9016D46E0900CBEFCE /* txt.txt */,
+				9C883B1916EAC94700E31372 /* ppt.ppt */,
 				9C16F56D16D6FA170093238B /* doc.doc */,
 				9C59953416C2D8A600701ECF /* InfoPlist.strings */,
 				9C59953716C2D8A600701ECF /* main.m */,
 				9C59953916C2D8A600701ECF /* Good Client App-Prefix.pch */,
+				9C883B1B16EAD4CC00E31372 /* Icon@2x.png */,
 				9C59953D16C2D8A600701ECF /* Default.png */,
 				9C59953F16C2D8A600701ECF /* Default@2x.png */,
 				9C59954116C2D8A600701ECF /* Default-568h@2x.png */,
+				9C883B1716EAC3AF00E31372 /* clouds.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -308,6 +317,8 @@
 				9C16F56E16D6FA170093238B /* doc.doc in Resources */,
 				9C16F57216D7F2A40093238B /* png.png in Resources */,
 				9C16F57416D7F2AD0093238B /* jpg.jpg in Resources */,
+				9C883B1816EAC3AF00E31372 /* clouds.png in Resources */,
+				9C883B1C16EAD4CD00E31372 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C59955D16C2D8A600701ECF /* InfoPlist.strings in Resources */,
+				9C883B1A16EAC94800E31372 /* ppt.ppt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +424,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jared Hansen (W2VYKZJ3D8)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -427,6 +440,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "6E69F461-5BE1-4E1D-BD70-CF12F8AB5D3C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -441,6 +456,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jared Hansen (W2VYKZJ3D8)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -449,6 +465,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "6E69F461-5BE1-4E1D-BD70-CF12F8AB5D3C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
