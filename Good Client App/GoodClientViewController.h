@@ -7,15 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <GD/GDiOS.h>
-#import <GD/GDServices.h>
-#import <GD/GDFileSystem.h>
-#import "Protocols.h"
 
-@interface GoodClientViewController : UIViewController <GDServiceClientDelegate, ServiceControllerDelegate>
-@property (nonatomic, assign) GDServiceClient *gdsc;
-@property (nonatomic, assign) GDiOS *gdLibrary;
-@property (nonatomic, assign) id <GDServiceClientDelegate> delegate;
+#import "ServiceController.h"
+#import <GD/GDiOS.h>
+
+#import <GD/GDFileSystem.h>
+
+@interface GoodClientViewController : UIViewController <ServiceControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *fileTypeSegmentedControl;

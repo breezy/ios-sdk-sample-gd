@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <GD/GDServices.h>
-#import "Protocols.h"
 
-@class ViewController;
 @class RootViewController;
+
+@protocol ServiceControllerDelegate <NSObject>
+-(void)showAlert:(id)serviceReply;
+@end
 
 typedef enum {
     PrintFile,

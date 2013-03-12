@@ -26,9 +26,9 @@
 NSString* const kServiceNotImplementedDescription = @"The requested service is not implemented.";
 NSString* const kMethodNotImplementedDescription = @"The requested method is not implemented.";
 
-// PrintServiceId and PrintServiceVersion
-NSString* const kPrintServiceId = @"com.breezy.good.services.server";
-NSString* const kPrintServiceVersion = @"1.0";
+// TransferServiceId and TransferServiceVersion
+NSString* const kTransferServiceId = @"com.good.gdservice.transfer-file";
+NSString* const kTransferServiceVersion = @"1.0.0.0";
 
 - (id) init
 {
@@ -107,13 +107,17 @@ NSString* const kPrintServiceVersion = @"1.0";
     // Set file from GD Container to transfer and print
     fileToPrint = file;
     
-    // GD Service Framework: Search for Breezy Public Print Service
+    // GD Service Framework: Search for Transfer Service
     GoodClientAppDelegate *appDelegate = (GoodClientAppDelegate *)[UIApplication sharedApplication].delegate;
-    NSArray* printSvc = [appDelegate.gdLibrary getApplicationDetailsForService:@"com.breezy.good.services.server" andVersion:kPrintServiceVersion];
-    GDAppDetail *appDetail = printSvc[0];
-    NSLog(appDetail.applicationId);
+    NSArray* transferSvc = [appDelegate.gdLibrary getApplicationDetailsForService:kTransferServiceId andVersion:kTransferServiceVersion];
+    NSString *appId = nil;
+    for (GDAppDetail *appDetail in transferSvc) {
+        if ([appDetail.applicationId isEqualToString:@"com.breezy.good.ios"])
+            appId = appDetail.applicationId;
+    }
+    NSLog(@"%@",appId);
     
-    BOOL didSendRequest = [self sendRequest:error requestType:PrintFile sendTo:appDetail.applicationId];
+    BOOL didSendRequest = [self sendRequest:error requestType:PrintFile sendTo:appId];
     
     return didSendRequest;
 }
@@ -154,10 +158,10 @@ NSString* const kPrintServiceVersion = @"1.0";
               myStat.fileLen, [lastModified description] );
     }
     
-    // Send a 'printFile' request to the Breezy for Good...
+    // Send a 'printFile' request to Breezy for Good...
     return [GDServiceClient sendTo:appId
-                       withService:kPrintServiceId
-                       withVersion:kPrintServiceVersion
+                       withService:kTransferServiceId
+                       withVersion:kTransferServiceVersion
                         withMethod:@"printFile"
                         withParams:nil
                    withAttachments:fileArray

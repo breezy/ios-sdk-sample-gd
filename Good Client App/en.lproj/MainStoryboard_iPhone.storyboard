@@ -115,6 +115,19 @@
     <resources>
         <image name="Icon@2x.png" width="114" height="114"/>
     </resources>
+    <classes>
+        <class className="GoodClientViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoodClientViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sendPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="fileTypeSegmentedControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="sendButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
