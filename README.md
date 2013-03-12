@@ -1,8 +1,5 @@
 Breezy for Good iOS ICC v1
 ============================
-
-For a working example see the [Breezy SDK Example App](https://github.com/breezy/Breezy-iOS-SDK-Example)
-
 Setup
 ----------------
 **For ICC:**
