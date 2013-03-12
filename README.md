@@ -91,11 +91,13 @@ Objective
 ----------------
 1. To save your document to your app's GD Container.
 2. Transfer the document from your Good Dynamics app's GD Container to Breezy for Good's to print.
+**Breezy for Good supports the following filetypes: Imported File, PDF, Postscript, Encapsulated PostScript, Adobe Photoshop, Adobe Illustrator, GIF, Bitmap, Microsoft Word, Microsoft Excel, Microsoft Powerpoint, Apple Keynote, eFax Fax, PNG, TIFF, JPEG, Generic Image, XML, TXT, Generic Text, Generic Mixed Content, Generic.**
 
 How to use
 ----------------
 Pass the name of the file you want to print to your instance of the ServiceController using the method - printFile:file withError:error
 **Make sure the file is in your GD Secure Container.**
+
 ```objc
 - (IBAction)sendPressed:(UIButton *)sender
 {
