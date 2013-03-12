@@ -1,4 +1,4 @@
-Breezy for Good iOS Test App v1
+Breezy for Good iOS ICC v1
 ============================
 
 For a working example see the [Breezy SDK Example App](https://github.com/breezy/Breezy-iOS-SDK-Example)
@@ -23,13 +23,7 @@ Add the following delegates into your view controller
 @interface YourViewController : UIViewController <ServiceControllerDelegate>
 ```
 
-### Step 3 - Add the ServiceControllerDelegate to the desired .h file
-Add the following delegates into your view controller
-```objc
-@interface YourViewController : UIViewController <ServiceControllerDelegate>
-```
-
-### Step 4 - Allocate an instance of the ServiceController, set the delegate in the desired .m file
+### Step 3 - Allocate an instance of the ServiceController, set the delegate in the desired .m file
 Initialise and set the delegate of the ServiceController
 ```objc
 @implementation GoodClientViewController
