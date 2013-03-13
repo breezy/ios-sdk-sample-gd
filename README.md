@@ -3,24 +3,25 @@ Breezy for Good iOS ICC v1
 Setup
 ----------------
 **For ICC:**
+### Step 1 - Add the ServiceController files to your project
 Add the following files to your project:
 
 - ServiceController.h
 - ServiceController.m
 
-### Step 1 - Import ServiceController.h and GDiOS.h into the desired .h file
+### Step 2 - Import ServiceController.h and GDiOS.h into the desired .h file
 ```objc
 #import <GD/GDiOS.h>
 #import "ServiceController.h"
 ```
 
-### Step 2 - Add the ServiceControllerDelegate to the desired .h file
-Add the following delegates into your view controller
+### Step 3 - Add the ServiceControllerDelegate to the desired .h file
+Add the delegate into your view controller
 ```objc
 @interface YourViewController : UIViewController <ServiceControllerDelegate>
 ```
 
-### Step 3 - Allocate an instance of the ServiceController, set the delegate in the desired .m file
+### Step 4 - Allocate an instance of the ServiceController, set the delegate in the desired .m file
 Initialise and set the delegate of the ServiceController
 ```objc
 @implementation GoodClientViewController
@@ -35,7 +36,7 @@ _serviceController = [[ServiceController alloc] init];
 [_serviceController setDelegate:self];
 ```
 
-### Step 4 - Implement the following ServiceControllerDelegate methods in the desired .m file
+### Step 5 - Implement the following ServiceControllerDelegate methods in the desired .m file
 ```objc
 - (void) showAlert:(id)serviceReply
 {
@@ -89,8 +90,8 @@ _serviceController = [[ServiceController alloc] init];
 
 Objective
 ----------------
-1. To save your document to your app's GD Container.
-2. Transfer the document from your Good Dynamics app's GD Container to Breezy for Good's to print.
+1. To save your document to your GD app's Secure Container.
+2. Transfer the document from your GD app's Secure Container to Breezy for Good's Secure Container.
  
 
 **Breezy for Good supports the following filetypes:**  
