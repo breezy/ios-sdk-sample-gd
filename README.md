@@ -36,6 +36,7 @@ _serviceController = [[ServiceController alloc] init];
 ```
 
 ### Step 5 - Implement the following ServiceControllerDelegate methods in the desired .m file
+Add the following methods into your view controller:
 ```objc
 - (void) showAlert:(id)serviceReply
 {
