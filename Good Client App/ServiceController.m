@@ -158,11 +158,11 @@ NSString* const kTransferServiceVersion = @"1.0.0.0";
               myStat.fileLen, [lastModified description] );
     }
     
-    // Send a 'printFile' request to Breezy for Good...
+    // Send a 'fileTransfer' request to Breezy for Good...
     return [GDServiceClient sendTo:appId
                        withService:kTransferServiceId
                        withVersion:kTransferServiceVersion
-                        withMethod:@"printFile"
+                        withMethod:@"fileTransfer"
                         withParams:nil
                    withAttachments:fileArray
                bringServiceToFront:GDEPreferPeerInForeground
