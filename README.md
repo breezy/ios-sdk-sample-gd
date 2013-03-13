@@ -105,8 +105,10 @@ Pass the name of the file you want to print to your instance of the ServiceContr
 - (IBAction)sendPressed:(UIButton *)sender
 {
     NSError *err = nil;
+    // Get the name of the file to print(eg. fileToPrint.doc)
     NSString *fileToPrint = [self fileInGDContainer];
     
+    // Specify file to printFile method
     BOOL didSendRequest = [_serviceController printFile:fileToPrint withError:&err];
     
     if (NO == didSendRequest)
