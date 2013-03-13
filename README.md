@@ -1,5 +1,15 @@
 Breezy for Good iOS ICC v1
 ============================
+
+Objective
+----------------
+1. To save your document to your GD app's Secure Container.
+2. Transfer the document from your GD app's Secure Container to Breezy for Good's Secure Container.
+ 
+
+**Breezy for Good supports the following filetypes:**  
+**Imported File, PDF, Postscript, Encapsulated PostScript, Adobe Photoshop, Adobe Illustrator, GIF, Bitmap, Microsoft Word, Microsoft Excel, Microsoft Powerpoint, Apple Keynote, eFax Fax, PNG, TIFF, JPEG, Generic Image, XML, TXT, Generic Text, Generic Mixed Content, Generic.**
+
 Setup
 ----------------
 ### Step 1 - Add the ServiceController files to your project
@@ -86,17 +96,6 @@ Add the following methods into your view controller:
     [alert show];
 }
 ```
-
-
-Objective
-----------------
-1. To save your document to your GD app's Secure Container.
-2. Transfer the document from your GD app's Secure Container to Breezy for Good's Secure Container.
- 
-
-**Breezy for Good supports the following filetypes:**  
-**Imported File, PDF, Postscript, Encapsulated PostScript, Adobe Photoshop, Adobe Illustrator, GIF, Bitmap, Microsoft Word, Microsoft Excel, Microsoft Powerpoint, Apple Keynote, eFax Fax, PNG, TIFF, JPEG, Generic Image, XML, TXT, Generic Text, Generic Mixed Content, Generic.**
-
 How to use
 ----------------
 Pass the name of the file you want to print to your instance of the ServiceController using the method - printFile:file withError:error
