@@ -2,7 +2,6 @@ Breezy for Good iOS ICC v1
 ============================
 Setup
 ----------------
-**For ICC:**
 ### Step 1 - Add the ServiceController files to your project
 Add the following files to your project:
 
