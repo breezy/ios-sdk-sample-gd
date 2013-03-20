@@ -162,7 +162,7 @@ NSString* const kTransferServiceVersion = @"1.0.0.0";
     return [GDServiceClient sendTo:appId
                        withService:kTransferServiceId
                        withVersion:kTransferServiceVersion
-                        withMethod:@"fileTransfer"
+                        withMethod:@"transferFile"
                         withParams:nil
                    withAttachments:fileArray
                bringServiceToFront:GDEPreferPeerInForeground
