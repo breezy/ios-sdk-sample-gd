@@ -1,6 +1,8 @@
 Breezy for Good iOS ICC v1
 ============================
 
+This is a demo app to use with Breezy for Good. This app demonstrates how to use ICC to transfer a file from a GD App to Breezy for Good for printing.
+
 Objective
 ----------------
 1. To save your document to your GD app's Secure Container.
