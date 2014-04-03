@@ -31,11 +31,16 @@
 			<array>
 				<string>com.breezy.good.test.sc</string>
 				<string>com.breezy.good.test.sc2</string>
+				<string>com.good.gd.discovery</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>GDApplicationID</key>
+	<string>com.breezy.good.test</string>
+	<key>GDApplicationVersion</key>
+	<string>1.0.0.0</string>
 	<key>GDLibraryMode</key>
 	<string>GDEnterpriseMode</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -48,6 +53,12 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<false/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIView</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

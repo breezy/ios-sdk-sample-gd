@@ -11,30 +11,24 @@
 
 @implementation GoodClientAppDelegate
 @synthesize window = _window;
-@synthesize gdLibrary = _gdLibrary;
-
-NSString* kappId = @"com.breezy.good.test";
-NSString* kappVersion = @"1.0";
+@synthesize good = _good;
 
 #pragma mark -
 #pragma mark Application lifecycle
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    self.gdLibrary = [GDiOS sharedInstance];
-    _gdLibrary.delegate = self;
-    [_gdLibrary authorise:kappId andVersion:kappVersion];
-    
-    
-    return YES;
+	self.window = [[GDiOS sharedInstance] getWindow];
+	self.good = [GDiOS sharedInstance];
+	
+	_good.delegate = self;
+	started = NO;
+	
+	// Show the Good Authentication UI.
+	[_good authorize];
+	
+	return YES;
 }
 
-- (UIWindow *)window
-{
-    return [[GDiOS sharedInstance] getWindow];
-}
-							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -43,7 +37,7 @@ NSString* kappVersion = @"1.0";
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -62,76 +56,93 @@ NSString* kappVersion = @"1.0";
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-#pragma mark -
-#pragma mark Good Libraries application lifecycle
 
-- (void)onNotAuthorised:(GDAppEvent *)anEvent
+#pragma mark - Good Dynamics Delegate Methods
+-(void)handleEvent:(GDAppEvent*)anEvent
 {
-    // Application is not authorised...
-    switch (anEvent.code) {
-        case GDErrorActivationFailed:
-        case GDErrorProvisioningFailed:
-        case GDErrorPushConnectionTimeout:
-        case GDErrorProvisioningCancelled: {
-            [_gdLibrary authorise:kappId andVersion:kappVersion];
-            break;
-        }
-        case GDErrorSecurityError:
-        case GDErrorAppDenied:
-        case GDErrorBlocked:
-        case GDErrorWiped:
-        case GDErrorRemoteLockout:
-        case GDErrorPasswordChangeRequired: {
-            NSLog(@"onNotAuthorised %@", anEvent.message);
-            break;
-        }
-        case GDErrorIdleLockout: {
-            // idle lockout is benign & informational so don't show an alert
-            break;
-        }
-        default:
-            NSAssert(false, @"Unhandled authorisation event");
-            break;
-    }
+	/* Called from _good when events occur, such as system startup. */
+	
+	switch (anEvent.type)
+	{
+		case GDAppEventAuthorized:
+		{
+			[self onauthorized:anEvent];
+			break;
+		}
+		case GDAppEventNotAuthorized:
+		{
+			[self onNotauthorized:anEvent];
+			break;
+		}
+		case GDAppEventRemoteSettingsUpdate:
+		{
+			//A change to application-related configuration or policy settings.
+			break;
+		}
+		case GDAppEventServicesUpdate:
+		{
+			//A change to services-related configuration.
+			break;
+		}
+		case GDAppEventPolicyUpdate:
+		{
+			//A change to one or more application-specific policy settings has been received.
+			break;
+		}
+	}
 }
 
--(void) onAuthorised:(GDAppEvent*)anEvent {
-    /* Handle the Good Libraries authorised event. */
+
+-(void)onNotauthorized:(GDAppEvent*)anEvent
+{
+	/* Handle the Good Libraries not authorized event. */
     
-    switch (anEvent.code) {
-        case GDErrorNone: {
-            if (!started) {
-                // launch application UI here
-                
-                started = YES;
-            }
-            break;
-        }
-        default:
-            NSAssert(false, @"Authorised startup with an error");
-            break;
-    }
+	switch (anEvent.code) {
+		case GDErrorActivationFailed:
+		case GDErrorProvisioningFailed:
+		case GDErrorPushConnectionTimeout: {
+			// application can either handle this and show it's own UI or just call back into
+			// the GD library and the welcome screen will be shown
+			[_good authorize];
+			break;
+		}
+		case GDErrorSecurityError:
+		case GDErrorAppDenied:
+		case GDErrorBlocked:
+		case GDErrorWiped:
+		case GDErrorRemoteLockout:
+		case GDErrorPasswordChangeRequired: {
+			// an condition has occured denying authorization, an application may wish to log these events
+			NSLog(@"onNotauthorized %@", anEvent.message);
+			break;
+		}
+		case GDErrorIdleLockout: {
+			// idle lockout is benign & informational
+			break;
+		}
+		default:
+			NSAssert(false, @"Unhandled not authorized event");
+			break;
+	}
 }
 
--(void)handleEvent:(GDAppEvent*)anEvent {
-    // Called from gdLibrary when events occur, such as authorisation.
-    switch (anEvent.type) {
-        case GDAppEventAuthorised:
-        {
-            [self onAuthorised:anEvent];
-            break;
-        }
-        case GDAppEventNotAuthorised:
-        {
-            [self onNotAuthorised:anEvent];
-            break;
-        }
-        default:
-        {
-            // This app is not interested in any other type of event.
-            break;
-        }
-    }
+
+-(void)onauthorized:(GDAppEvent*)anEvent
+{
+	/* Handle the Good Libraries authorized event. */
+    
+	switch (anEvent.code) {
+		case GDErrorNone: {
+			if (!started) {
+				// launch application UI here
+				started = YES;
+			}
+			break;
+		}
+		default:
+			NSAssert(false, @"authorized startup with an error");
+			break;
+	}
 }
 
 @end

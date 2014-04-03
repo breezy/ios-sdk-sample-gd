@@ -14,8 +14,7 @@
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        [GDiOS initialiseWithClassConformingToUIApplicationDelegate:[GoodClientAppDelegate class]];
+        [GDiOS initializeWithClassNameConformingToUIApplicationDelegate:@"GoodClientAppDelegate"];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([GoodClientAppDelegate class]));
-        [GDiOS finalise];
     }
 }

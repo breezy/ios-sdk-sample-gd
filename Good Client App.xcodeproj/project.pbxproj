@@ -33,16 +33,17 @@
 		9C59957216C2DA6A00701ECF /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59957116C2DA6A00701ECF /* CoreTelephony.framework */; };
 		9C59957416C2DA7100701ECF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59957316C2DA7100701ECF /* Security.framework */; };
 		9C59957616C2DA7700701ECF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59957516C2DA7700701ECF /* SystemConfiguration.framework */; };
-		9C59957816C2DA8100701ECF /* GD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59957716C2DA8100701ECF /* GD.framework */; };
 		9C59957A16C2DA8700701ECF /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59957916C2DA8700701ECF /* libstdc++.dylib */; };
 		9C59957B16C2DA9000701ECF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C59956916C2DA3300701ECF /* libz.dylib */; };
-		9C59957D16C2DACB00701ECF /* GDAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C59957C16C2DACB00701ECF /* GDAssets.bundle */; };
 		9C5FDF8E16D45F7100CBEFCE /* pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9C5FDF8D16D45F7100CBEFCE /* pdf.pdf */; };
 		9C5FDF9116D46E0900CBEFCE /* txt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9C5FDF9016D46E0900CBEFCE /* txt.txt */; };
 		9C86E6B416D2C7CD001652AC /* ServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C86E6B316D2C7CD001652AC /* ServiceController.m */; };
 		9C883B1816EAC3AF00E31372 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C883B1716EAC3AF00E31372 /* clouds.png */; };
 		9C883B1A16EAC94800E31372 /* ppt.ppt in Resources */ = {isa = PBXBuildFile; fileRef = 9C883B1916EAC94700E31372 /* ppt.ppt */; };
 		9C883B1C16EAD4CD00E31372 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C883B1B16EAD4CC00E31372 /* Icon@2x.png */; };
+		9CEFFAA718EB4BA100A1EE07 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEFFAA618EB4BA100A1EE07 /* AdSupport.framework */; };
+		9CEFFAA918EB501000A1EE07 /* GD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEFFAA818EB501000A1EE07 /* GD.framework */; };
+		9CEFFAAB18EB506900A1EE07 /* GDAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9CEFFAAA18EB506900A1EE07 /* GDAssets.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +80,7 @@
 		9C59954A16C2D8A600701ECF /* GoodClientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodClientViewController.m; sourceTree = "<group>"; };
 		9C59955116C2D8A600701ECF /* Good Client AppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Good Client AppTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C59955216C2D8A600701ECF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		9C59955A16C2D8A600701ECF /* Good Client AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Good Client AppTests-Info.plist"; sourceTree = "<group>"; };
+		9C59955A16C2D8A600701ECF /* Good Client App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Good Client App-Info.plist"; sourceTree = "<group>"; };
 		9C59955C16C2D8A600701ECF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C59955E16C2D8A600701ECF /* Good_Client_AppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Good_Client_AppTests.h; sourceTree = "<group>"; };
 		9C59955F16C2D8A600701ECF /* Good_Client_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Good_Client_AppTests.m; sourceTree = "<group>"; };
@@ -90,9 +91,7 @@
 		9C59957116C2DA6A00701ECF /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		9C59957316C2DA7100701ECF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9C59957516C2DA7700701ECF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		9C59957716C2DA8100701ECF /* GD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GD.framework; path = System/Library/Frameworks/GD.framework; sourceTree = SDKROOT; };
 		9C59957916C2DA8700701ECF /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
-		9C59957C16C2DACB00701ECF /* GDAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GDAssets.bundle; path = System/Library/Frameworks/GD.framework/Resources/GDAssets.bundle; sourceTree = SDKROOT; };
 		9C5FDF8D16D45F7100CBEFCE /* pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pdf.pdf; sourceTree = "<group>"; };
 		9C5FDF9016D46E0900CBEFCE /* txt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = txt.txt; sourceTree = "<group>"; };
 		9C86E6B216D2C7CD001652AC /* ServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceController.h; sourceTree = "<group>"; };
@@ -100,6 +99,9 @@
 		9C883B1716EAC3AF00E31372 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
 		9C883B1916EAC94700E31372 /* ppt.ppt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ppt.ppt; sourceTree = "<group>"; };
 		9C883B1B16EAD4CC00E31372 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		9CEFFAA618EB4BA100A1EE07 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		9CEFFAA818EB501000A1EE07 /* GD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GD.framework; path = System/Library/Frameworks/GD.framework; sourceTree = SDKROOT; };
+		9CEFFAAA18EB506900A1EE07 /* GDAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GDAssets.bundle; path = System/Library/Frameworks/GD.framework/Resources/GDAssets.bundle; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +109,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CEFFAA918EB501000A1EE07 /* GD.framework in Frameworks */,
+				9CEFFAA718EB4BA100A1EE07 /* AdSupport.framework in Frameworks */,
 				9C59957B16C2DA9000701ECF /* libz.dylib in Frameworks */,
 				9C59957A16C2DA8700701ECF /* libstdc++.dylib in Frameworks */,
-				9C59957816C2DA8100701ECF /* GD.framework in Frameworks */,
 				9C59957616C2DA7700701ECF /* SystemConfiguration.framework in Frameworks */,
 				9C59957416C2DA7100701ECF /* Security.framework in Frameworks */,
 				9C59957216C2DA6A00701ECF /* CoreTelephony.framework in Frameworks */,
@@ -138,6 +141,7 @@
 		9C59951C16C2D8A600701ECF = {
 			isa = PBXGroup;
 			children = (
+				9CEFFAAA18EB506900A1EE07 /* GDAssets.bundle */,
 				9C59953116C2D8A600701ECF /* Good Client App */,
 				9C59955816C2D8A600701ECF /* Good Client AppTests */,
 				9C59952A16C2D8A600701ECF /* Frameworks */,
@@ -157,9 +161,9 @@
 		9C59952A16C2D8A600701ECF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9C59957C16C2DACB00701ECF /* GDAssets.bundle */,
+				9CEFFAA818EB501000A1EE07 /* GD.framework */,
+				9CEFFAA618EB4BA100A1EE07 /* AdSupport.framework */,
 				9C59957916C2DA8700701ECF /* libstdc++.dylib */,
-				9C59957716C2DA8100701ECF /* GD.framework */,
 				9C59957516C2DA7700701ECF /* SystemConfiguration.framework */,
 				9C59957316C2DA7100701ECF /* Security.framework */,
 				9C59957116C2DA6A00701ECF /* CoreTelephony.framework */,
@@ -227,7 +231,7 @@
 		9C59955916C2D8A600701ECF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9C59955A16C2D8A600701ECF /* Good Client AppTests-Info.plist */,
+				9C59955A16C2D8A600701ECF /* Good Client App-Info.plist */,
 				9C59955B16C2D8A600701ECF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -305,7 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C59957D16C2DACB00701ECF /* GDAssets.bundle in Resources */,
+				9CEFFAAB18EB506900A1EE07 /* GDAssets.bundle in Resources */,
 				9C59953616C2D8A600701ECF /* InfoPlist.strings in Resources */,
 				9C59953E16C2D8A600701ECF /* Default.png in Resources */,
 				9C59954016C2D8A600701ECF /* Default@2x.png in Resources */,
@@ -480,7 +484,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Good Client App/Good Client App-Prefix.pch";
 				INFOPLIST_FILE = "Good Client App/Good Client App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				STRIP_INSTALLED_PRODUCT = YES;
@@ -495,7 +499,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Good Client App/Good Client App-Prefix.pch";
 				INFOPLIST_FILE = "Good Client App/Good Client App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				STRIP_INSTALLED_PRODUCT = YES;

@@ -15,9 +15,11 @@
 
 @interface GoodClientViewController : UIViewController <ServiceControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *sendButton;
+@property (strong, nonatomic) IBOutlet UIButton *printButton;
+@property (strong, nonatomic) IBOutlet UIButton *transferButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *fileTypeSegmentedControl;
 
-- (IBAction)sendPressed:(UIButton *)sender;
+- (IBAction)printPressed:(id)sender;
+- (IBAction)transferPressed:(id)sender;
 
 @end

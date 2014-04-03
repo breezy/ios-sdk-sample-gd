@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12B2080" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="834-WL-lZY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="834-WL-lZY">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Good Client View Controller-->
@@ -9,25 +10,21 @@
             <objects>
                 <viewController id="2" customClass="GoodClientViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nJ2-2x-4ne">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="T2f-Fs-yrC">
-                                <rect key="frame" x="269" y="542" width="230" height="53"/>
+                                <rect key="frame" x="269" y="580" width="230" height="53"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <state key="normal" title="Print with Breezy">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Print">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <connections>
-                                    <action selector="sendPressed:" destination="2" eventType="touchUpInside" id="OE1-pe-Pur"/>
+                                    <action selector="printPressed:" destination="2" eventType="touchUpInside" id="8aJ-9G-pwo"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Uq3-en-ikf">
-                                <rect key="frame" x="236" y="453" width="296" height="44"/>
+                                <rect key="frame" x="236" y="491" width="296" height="29"/>
                                 <segments>
                                     <segment title="doc"/>
                                     <segment title="txt"/>
@@ -44,24 +41,31 @@
                                 <color key="textColor" red="0.0" green="0.36470588240000001" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="press &quot;Print with Breezy&quot;!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MaP-L2-fj3">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="press Print or Transfer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MaP-L2-fj3">
                                 <rect key="frame" x="224" y="370" width="321" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" red="0.0" green="0.36470588240000001" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Icon@2x.png" id="CkT-8c-0SX">
-                                <rect key="frame" x="327" y="203" width="114" height="114"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zZ4-uR-B6W">
+                                <rect key="frame" x="269" y="641" width="230" height="53"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="Transfer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="transferPressed:" destination="2" eventType="touchUpInside" id="Zyh-dA-QJg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.87843137250000003" green="0.94901960780000005" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="xfQ-ad-ZW9"/>
                     <connections>
                         <outlet property="fileTypeSegmentedControl" destination="Uq3-en-ikf" id="hFc-Jk-RxV"/>
-                        <outlet property="sendButton" destination="T2f-Fs-yrC" id="1XI-K0-Iyd"/>
+                        <outlet property="printButton" destination="T2f-Fs-yrC" id="LV7-hM-ktD"/>
+                        <outlet property="transferButton" destination="zZ4-uR-B6W" id="rA1-5G-AqH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -87,21 +91,8 @@
             <point key="canvasLocation" x="190" y="-272"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Icon@2x.png" width="114" height="114"/>
-    </resources>
-    <classes>
-        <class className="GoodClientViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoodClientViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sendPressed:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="fileTypeSegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="sendButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>

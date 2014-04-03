@@ -15,7 +15,7 @@
 
 @implementation ServiceController {
     NSString *fileType;
-    NSString *fileToPrint;
+    NSString *fileToSend;
 }
 
 @synthesize goodServiceClient = _goodServiceClient;
@@ -30,11 +30,16 @@ NSString* const kMethodNotImplementedDescription = @"The requested method is not
 NSString* const kTransferServiceId = @"com.good.gdservice.transfer-file";
 NSString* const kTransferServiceVersion = @"1.0.0.0";
 
+// PrintServiceId and PrintServiceVersion
+NSString* const kPrintServiceId = @"com.good.gdservice.print-file";
+NSString* const kPrintServiceVersion = @"1.0.0.0";
+
+
+
 - (id) init
 {
-    
     self = [super init];
-    fileToPrint = [[NSString alloc] init];
+    fileToSend = [[NSString alloc] init];
     _goodServiceClient = [[GDServiceClient alloc] init];
     _goodServiceClient.delegate = self;
     
@@ -102,22 +107,44 @@ NSString* const kTransferServiceVersion = @"1.0.0.0";
     return NO;
 }
 
-- (BOOL) printFile:(NSString *)file withError:(NSError**)error
+- (BOOL) transferFile:(NSString *)file withError:(NSError**)error
 {
-    // Set file from GD Container to transfer and print
-    fileToPrint = file;
+    // Set file from GD Container to transfer
+    fileToSend = file;
     
     // GD Service Framework: Search for Transfer Service
     GoodClientAppDelegate *appDelegate = (GoodClientAppDelegate *)[UIApplication sharedApplication].delegate;
-    NSArray* transferSvc = [appDelegate.gdLibrary getApplicationDetailsForService:kTransferServiceId andVersion:kTransferServiceVersion];
-    NSString *appId = nil;
+    NSArray* transferSvc = [appDelegate.good getApplicationDetailsForService:kTransferServiceId andVersion:kTransferServiceVersion];
+    NSString *bundleId = nil;
     for (GDAppDetail *appDetail in transferSvc) {
-        if ([appDetail.applicationId isEqualToString:@"com.breezy.good.ios"])
-            appId = appDetail.applicationId;
+        bundleId = appDetail.address;
+        if ([bundleId isEqualToString:@"com.breezy.good.ios"])
+            break;
     }
-    NSLog(@"%@",appId);
+    NSLog(@"%@",bundleId);
     
-    BOOL didSendRequest = [self sendRequest:error requestType:PrintFile sendTo:appId];
+    BOOL didSendRequest = [self sendRequest:error requestType:TransferFile sendTo:bundleId];
+    
+    return didSendRequest;
+}
+
+- (BOOL) printFile:(NSString *)file withError:(NSError**)error
+{
+    // Set file from GD Container to transfer and print
+    fileToSend = file;
+    
+    // GD Service Framework: Search for Print Service
+    GoodClientAppDelegate *appDelegate = (GoodClientAppDelegate *)[UIApplication sharedApplication].delegate;
+    NSArray* printSvc = [appDelegate.good getApplicationDetailsForService:kPrintServiceId andVersion:kPrintServiceVersion];
+    NSString *bundleId = nil;
+    for (GDAppDetail *appDetail in printSvc) {
+        bundleId = appDetail.address;
+        if ([bundleId isEqualToString:@"com.breezy.good.ios"])
+            break;
+    }
+    NSLog(@"%@",bundleId);
+    
+    BOOL didSendRequest = [self sendRequest:error requestType:PrintFile sendTo:bundleId];
     
     return didSendRequest;
 }
@@ -126,6 +153,10 @@ NSString* const kTransferServiceVersion = @"1.0.0.0";
 {
     BOOL result = NO;
     switch(type){
+        case TransferFile:
+        {
+            result = [self sendTransferReqeust:error sendTo:appId];
+        }
         case PrintFile:
         {
             result = [self sendPrintReqeust:error sendTo:appId];
@@ -142,9 +173,9 @@ NSString* const kTransferServiceVersion = @"1.0.0.0";
     return result;
 }
 
-- (BOOL) sendPrintReqeust:(NSError**)error sendTo:appId
+- (BOOL) sendTransferReqeust:(NSError**)error sendTo:appId
 {
-    NSMutableArray *fileArray = [[NSMutableArray alloc] initWithObjects:fileToPrint, nil];
+    NSMutableArray *fileArray = [[NSMutableArray alloc] initWithObjects:fileToSend, nil];
     
     GDFileStat myStat;
     NSError *statErr = nil;
@@ -158,11 +189,39 @@ NSString* const kTransferServiceVersion = @"1.0.0.0";
               myStat.fileLen, [lastModified description] );
     }
     
-    // Send a 'fileTransfer' request to Breezy for Good...
+    // Send a 'transferFile' request to Breezy for Good...
     return [GDServiceClient sendTo:appId
                        withService:kTransferServiceId
                        withVersion:kTransferServiceVersion
                         withMethod:@"transferFile"
+                        withParams:nil
+                   withAttachments:fileArray
+               bringServiceToFront:GDEPreferPeerInForeground
+                         requestID:nil
+                             error:error];
+}
+
+- (BOOL) sendPrintReqeust:(NSError**)error sendTo:appId
+{
+    NSMutableArray *fileArray = [[NSMutableArray alloc] initWithObjects:fileToSend, nil];
+    
+    GDFileStat myStat;
+    NSError *statErr = nil;
+    BOOL statOK = [GDFileSystem getFileStat:[fileArray objectAtIndex:0]
+                                         to:&myStat
+                                      error:&statErr];
+    if (statOK) {
+        NSDate *lastModified =
+        [NSDate dateWithTimeIntervalSince1970:myStat.lastModifiedTime];
+        NSLog( @"Stat OK. Length: %lld. Last modified: %@\n",
+              myStat.fileLen, [lastModified description] );
+    }
+    
+    // Send a 'printFile' request to Breezy for Good...
+    return [GDServiceClient sendTo:appId
+                       withService:kPrintServiceId
+                       withVersion:kPrintServiceVersion
+                        withMethod:@"printFile"
                         withParams:nil
                    withAttachments:fileArray
                bringServiceToFront:GDEPreferPeerInForeground

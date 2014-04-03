@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12B2080" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="no3-ow-rdn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="no3-ow-rdn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Good Client View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="GoodClientViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pSa-z4-Y60"/>
+                        <viewControllerLayoutGuide type="bottom" id="52J-xY-Nze"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8f-c9-MKd">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8f-c9-MKd">
+                                <rect key="frame" x="73" y="332" width="175" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="03K-uf-sw1"/>
                                     <constraint firstAttribute="width" constant="175" id="Sgv-Qc-zG7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Print with Breezy">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Print">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <connections>
+                                    <action selector="printPressed:" destination="2" eventType="touchUpInside" id="d1Y-vF-zWv"/>
                                     <action selector="sendPressed:" destination="2" eventType="touchUpInside" id="krq-EL-6P1"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LMx-Oa-KA6">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LMx-Oa-KA6">
+                                <rect key="frame" x="12" y="260" width="296" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="QQ1-x3-j8m"/>
                                     <constraint firstAttribute="width" constant="296" id="t8m-E7-yKN"/>
@@ -43,7 +47,8 @@
                                     <segment title="jpg"/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select a file type and" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAb-VG-qAD">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Select a file type and" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAb-VG-qAD">
+                                <rect key="frame" x="58" y="131" width="205" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="bW3-es-6iE"/>
                                     <constraint firstAttribute="width" constant="205" id="hyf-Ay-Kz9"/>
@@ -52,7 +57,8 @@
                                 <color key="textColor" red="0.0" green="0.36470588240000001" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="press &quot;Print with Breezy&quot;!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCB-B0-0fo">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="press Print or Transfer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCB-B0-0fo">
+                                <rect key="frame" x="35" y="166" width="250" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="3kK-hs-n7J"/>
                                     <constraint firstAttribute="width" constant="250" id="slA-qE-0bl"/>
@@ -61,32 +67,38 @@
                                 <color key="textColor" red="0.0" green="0.36470588240000001" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Icon@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="r3V-9Z-ihB">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yf9-Af-Aqm">
+                                <rect key="frame" x="73" y="384" width="175" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="7QE-FQ-KSV"/>
+                                    <constraint firstAttribute="width" constant="175" id="fC6-9N-dWJ"/>
+                                    <constraint firstAttribute="height" constant="44" id="feg-Wx-c5U"/>
                                 </constraints>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Transfer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="transferPressed:" destination="2" eventType="touchUpInside" id="uba-LJ-Ocr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.87843137250000003" green="0.94901960780000005" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="fAb-VG-qAD" firstAttribute="centerX" secondItem="DCB-B0-0fo" secondAttribute="centerX" type="default" id="6s6-cp-zb8"/>
-                            <constraint firstItem="fAb-VG-qAD" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="BQJ-Gt-ZrC"/>
-                            <constraint firstItem="r3V-9Z-ihB" firstAttribute="centerX" secondItem="fAb-VG-qAD" secondAttribute="centerX" type="default" id="NFu-J4-ebZ"/>
-                            <constraint firstItem="r3V-9Z-ihB" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Nnq-O1-jBw"/>
-                            <constraint firstItem="s8f-c9-MKd" firstAttribute="centerX" secondItem="LMx-Oa-KA6" secondAttribute="centerX" type="default" id="QJR-a8-fBJ"/>
-                            <constraint firstItem="DCB-B0-0fo" firstAttribute="top" secondItem="fAb-VG-qAD" secondAttribute="bottom" constant="-22" type="user" id="WnE-eb-Jda"/>
-                            <constraint firstItem="r3V-9Z-ihB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3" secondAttribute="top" priority="716" constant="31" type="user" id="dc5-hV-BQS"/>
-                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="top" secondItem="DCB-B0-0fo" secondAttribute="bottom" constant="6" type="user" id="kmT-Os-IIm"/>
-                            <constraint firstItem="fAb-VG-qAD" firstAttribute="top" secondItem="r3V-9Z-ihB" secondAttribute="bottom" constant="2" type="user" id="nmY-j2-xWl"/>
-                            <constraint firstItem="DCB-B0-0fo" firstAttribute="centerX" secondItem="LMx-Oa-KA6" secondAttribute="centerX" type="default" id="ood-Ua-7oP"/>
-                            <constraint firstItem="s8f-c9-MKd" firstAttribute="top" secondItem="LMx-Oa-KA6" secondAttribute="bottom" constant="28" type="user" id="tlz-6v-GYt"/>
+                            <constraint firstItem="fAb-VG-qAD" firstAttribute="centerX" secondItem="DCB-B0-0fo" secondAttribute="centerX" id="6s6-cp-zb8"/>
+                            <constraint firstItem="fAb-VG-qAD" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" id="BQJ-Gt-ZrC"/>
+                            <constraint firstItem="s8f-c9-MKd" firstAttribute="centerX" secondItem="LMx-Oa-KA6" secondAttribute="centerX" id="QJR-a8-fBJ"/>
+                            <constraint firstItem="DCB-B0-0fo" firstAttribute="top" secondItem="fAb-VG-qAD" secondAttribute="bottom" constant="-22" id="WnE-eb-Jda"/>
+                            <constraint firstItem="LMx-Oa-KA6" firstAttribute="top" secondItem="DCB-B0-0fo" secondAttribute="bottom" constant="6" id="kmT-Os-IIm"/>
+                            <constraint firstItem="DCB-B0-0fo" firstAttribute="centerX" secondItem="LMx-Oa-KA6" secondAttribute="centerX" id="ood-Ua-7oP"/>
+                            <constraint firstItem="s8f-c9-MKd" firstAttribute="top" secondItem="LMx-Oa-KA6" secondAttribute="bottom" constant="28" id="tlz-6v-GYt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8sw-Jy-B7F"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="fileTypeSegmentedControl" destination="LMx-Oa-KA6" id="ruC-ug-Ogg"/>
-                        <outlet property="sendButton" destination="s8f-c9-MKd" id="hqt-Br-lpL"/>
+                        <outlet property="printButton" destination="s8f-c9-MKd" id="St7-kd-Vb9"/>
+                        <outlet property="transferButton" destination="Yf9-Af-Aqm" id="wRb-08-FUt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -112,22 +124,6 @@
             <point key="canvasLocation" x="221" y="112"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Icon@2x.png" width="114" height="114"/>
-    </resources>
-    <classes>
-        <class className="GoodClientViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoodClientViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sendPressed:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="fileTypeSegmentedControl" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="sendButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

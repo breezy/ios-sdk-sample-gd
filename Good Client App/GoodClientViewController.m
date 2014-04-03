@@ -72,13 +72,28 @@
 }
 
 #pragma mark - Buttons Actions
-- (IBAction)sendPressed:(UIButton *)sender
+- (IBAction)printPressed:(id)sender
 {
     NSError *err = nil;
     NSString *fileToPrint = [self fileInGDContainer];
     
     // Pass the name of the file in your GD Container using the printFile method
     BOOL didSendRequest = [_serviceController printFile:fileToPrint withError:&err];
+    
+    if (NO == didSendRequest)
+    {
+        // The request could not be sent...
+        [self showErrorAlert:err];
+    }
+}
+
+- (IBAction)transferPressed:(id)sender
+{
+    NSError *err = nil;
+    NSString *fileToPrint = [self fileInGDContainer];
+    
+    // Pass the name of the file in your GD Container using the printFile method
+    BOOL didSendRequest = [_serviceController transferFile:fileToPrint withError:&err];
     
     if (NO == didSendRequest)
     {
@@ -125,5 +140,6 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
 }
+
 @end
 

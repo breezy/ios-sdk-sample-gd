@@ -16,6 +16,7 @@
 @end
 
 typedef enum {
+    TransferFile,
     PrintFile,
     BringServiceAppToFront,
 } ClientRequestType;
@@ -28,4 +29,5 @@ typedef enum {
 
 - (BOOL) sendRequest:(NSError**)error requestType:(ClientRequestType)type sendTo:(NSString*)appId;
 - (BOOL) printFile:(NSString *)file withError:(NSError**)error;
+- (BOOL) transferFile:(NSString *)file withError:(NSError**)error;
 @end

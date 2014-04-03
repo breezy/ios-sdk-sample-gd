@@ -17,8 +17,10 @@
     ServiceController *serviceController;
 }
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, assign) GDiOS *gdLibrary;
+@property (nonatomic, assign) GDiOS *good;
 
 -(NSArray*) getProvidersForService:(NSString*)serviceId;
+-(void) onAuthorized:(GDAppEvent*)anEvent;
+-(void) onNotAuthorized:(GDAppEvent*)anEvent;
 
 @end
