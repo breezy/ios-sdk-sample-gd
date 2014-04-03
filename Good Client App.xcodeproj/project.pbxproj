@@ -483,9 +483,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Good",
-					Client,
-					App,
+					"$(PROJECT_DIR)/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Good Client App/Good Client App-Prefix.pch";
@@ -504,9 +502,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Good",
-					Client,
-					App,
+					"$(PROJECT_DIR)/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Good Client App/Good Client App-Prefix.pch";
