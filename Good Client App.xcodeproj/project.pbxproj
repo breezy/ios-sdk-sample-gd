@@ -41,9 +41,9 @@
 		9C883B1816EAC3AF00E31372 /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C883B1716EAC3AF00E31372 /* clouds.png */; };
 		9C883B1A16EAC94800E31372 /* ppt.ppt in Resources */ = {isa = PBXBuildFile; fileRef = 9C883B1916EAC94700E31372 /* ppt.ppt */; };
 		9C883B1C16EAD4CD00E31372 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C883B1B16EAD4CC00E31372 /* Icon@2x.png */; };
+		9CA1A8E618EE1E0D000A99A8 /* GD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA1A8E518EE1E0D000A99A8 /* GD.framework */; };
+		9CA1A8E818EE1E16000A99A8 /* GDAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9CA1A8E718EE1E16000A99A8 /* GDAssets.bundle */; };
 		9CEFFAA718EB4BA100A1EE07 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEFFAA618EB4BA100A1EE07 /* AdSupport.framework */; };
-		9CEFFAA918EB501000A1EE07 /* GD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CEFFAA818EB501000A1EE07 /* GD.framework */; };
-		9CEFFAAB18EB506900A1EE07 /* GDAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9CEFFAAA18EB506900A1EE07 /* GDAssets.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,9 +99,9 @@
 		9C883B1716EAC3AF00E31372 /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
 		9C883B1916EAC94700E31372 /* ppt.ppt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ppt.ppt; sourceTree = "<group>"; };
 		9C883B1B16EAD4CC00E31372 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		9CA1A8E518EE1E0D000A99A8 /* GD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GD.framework; path = "Good Client App/GD.framework"; sourceTree = "<group>"; };
+		9CA1A8E718EE1E16000A99A8 /* GDAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GDAssets.bundle; path = "Good Client App/GDAssets.bundle"; sourceTree = "<group>"; };
 		9CEFFAA618EB4BA100A1EE07 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		9CEFFAA818EB501000A1EE07 /* GD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GD.framework; path = System/Library/Frameworks/GD.framework; sourceTree = SDKROOT; };
-		9CEFFAAA18EB506900A1EE07 /* GDAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GDAssets.bundle; path = System/Library/Frameworks/GD.framework/Resources/GDAssets.bundle; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CEFFAA918EB501000A1EE07 /* GD.framework in Frameworks */,
+				9CA1A8E618EE1E0D000A99A8 /* GD.framework in Frameworks */,
 				9CEFFAA718EB4BA100A1EE07 /* AdSupport.framework in Frameworks */,
 				9C59957B16C2DA9000701ECF /* libz.dylib in Frameworks */,
 				9C59957A16C2DA8700701ECF /* libstdc++.dylib in Frameworks */,
@@ -141,7 +141,7 @@
 		9C59951C16C2D8A600701ECF = {
 			isa = PBXGroup;
 			children = (
-				9CEFFAAA18EB506900A1EE07 /* GDAssets.bundle */,
+				9CA1A8E718EE1E16000A99A8 /* GDAssets.bundle */,
 				9C59953116C2D8A600701ECF /* Good Client App */,
 				9C59955816C2D8A600701ECF /* Good Client AppTests */,
 				9C59952A16C2D8A600701ECF /* Frameworks */,
@@ -161,7 +161,7 @@
 		9C59952A16C2D8A600701ECF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9CEFFAA818EB501000A1EE07 /* GD.framework */,
+				9CA1A8E518EE1E0D000A99A8 /* GD.framework */,
 				9CEFFAA618EB4BA100A1EE07 /* AdSupport.framework */,
 				9C59957916C2DA8700701ECF /* libstdc++.dylib */,
 				9C59957516C2DA7700701ECF /* SystemConfiguration.framework */,
@@ -309,7 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CEFFAAB18EB506900A1EE07 /* GDAssets.bundle in Resources */,
+				9CA1A8E818EE1E16000A99A8 /* GDAssets.bundle in Resources */,
 				9C59953616C2D8A600701ECF /* InfoPlist.strings in Resources */,
 				9C59953E16C2D8A600701ECF /* Default.png in Resources */,
 				9C59954016C2D8A600701ECF /* Default@2x.png in Resources */,
@@ -481,6 +481,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Good",
+					Client,
+					App,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Good Client App/Good Client App-Prefix.pch";
 				INFOPLIST_FILE = "Good Client App/Good Client App-Info.plist";
@@ -496,6 +502,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Good",
+					Client,
+					App,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Good Client App/Good Client App-Prefix.pch";
 				INFOPLIST_FILE = "Good Client App/Good Client App-Info.plist";
