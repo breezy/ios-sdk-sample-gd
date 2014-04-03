@@ -104,13 +104,12 @@ Pass the name of the file you want to print to your instance of the ServiceContr
 **Make sure the file is in your GD Secure Container.**
 
 ```objc
-- (IBAction)sendPressed:(UIButton *)sender
+- (IBAction)printPressed:(id)sender
 {
     NSError *err = nil;
-    // Get the name of the file to print(eg. fileToPrint.doc)
     NSString *fileToPrint = [self fileInGDContainer];
     
-    // Specify file to printFile method
+    // Pass the name of the file in your GD Container using the printFile method
     BOOL didSendRequest = [_serviceController printFile:fileToPrint withError:&err];
     
     if (NO == didSendRequest)
